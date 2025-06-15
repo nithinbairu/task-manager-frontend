@@ -1,0 +1,52 @@
+/* src/styles/StatsCard.css */
+.stats-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease-in-out;
+    border-left: 5px solid var(--card-color, #ccc); /* Uses CSS variable for color */
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+}
+
+.stats-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.stats-icon {
+    font-size: 2.2em;
+    margin-right: 15px;
+    color: var(--card-color, #333); /* Icon color matches border */
+}
+
+.stats-title {
+    font-size: 1.1em;
+    color: #555;
+    margin: 0;
+}
+
+.stats-body {
+    text-align: left;
+}
+
+.stats-value {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
+    display: block; /* Ensures it takes full width */
+    margin-bottom: 5px;
+}
+
+.stats-description {
+    font-size: 0.9em;
+    color: #777;
+    margin: 0;
+}

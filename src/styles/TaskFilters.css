@@ -1,0 +1,72 @@
+/* src/styles/TaskFilters.css */
+.task-filters-bar {
+    display: flex;
+    flex-wrap: wrap; /* Allows filters to wrap on smaller screens */
+    gap: 15px;
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.search-input-group,
+.filter-dropdown-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1; /* Allow flex-grow */
+    min-width: 180px; /* Minimum width for each filter */
+}
+
+.search-input-group input,
+.filter-dropdown-group select {
+    width: 100%;
+    padding: 10px 15px;
+    padding-left: 40px; /* Make space for icon */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333;
+    appearance: none; /* Remove default dropdown arrow */
+    background-color: #fff;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-input-group input:focus,
+.filter-dropdown-group select:focus {
+    border-color: #007bff;
+}
+
+.search-icon,
+.dropdown-arrow {
+    position: absolute;
+    left: 15px;
+    color: #888;
+    pointer-events: none; /* Make icon unclickable */
+}
+
+.dropdown-arrow {
+    right: 15px; /* Position arrow on the right for selects */
+    left: auto; /* Override left for dropdown arrow */
+}
+
+/* Specific styling for dropdowns */
+.filter-dropdown-group select {
+    padding-right: 35px; /* Space for the custom arrow */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .task-filters-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .search-input-group,
+    .filter-dropdown-group {
+        width: 100%;
+        min-width: unset; /* Remove min-width to allow full width */
+    }
+}
