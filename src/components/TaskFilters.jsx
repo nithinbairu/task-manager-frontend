@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getCategories } from '../services/taskService'; // Ensure this is correctly imported
+import { getCategories } from '../services/taskService'; 
 import '../styles/TaskFilters.css';
 
 const TaskFilters = ({ filters, onFilterChange, token }) => {
@@ -8,26 +8,25 @@ const TaskFilters = ({ filters, onFilterChange, token }) => {
     useEffect(() => {
         const fetchCategories = async () => {
             if (!token) {
-                setCategories(['all', 'Work', 'Personal', 'Shopping', 'Learning', 'General']); // Fallback
+                setCategories(['all', 'Work', 'Personal', 'Shopping', 'Learning', 'General']);
                 return;
             }
             try {
                 const fetchedCategories = await getCategories(token);
 
-                // --- MODIFIED LINE BLOCK ---
-                // Ensure fetchedCategories is an array before trying to spread it
+               
                 if (Array.isArray(fetchedCategories)) {
                     setCategories(['all', ...fetchedCategories]);
                 } else {
-                    // Log the unexpected type and use a fallback
+                    
                     console.error("Error: Fetched categories is not an array. Received:", typeof fetchedCategories, fetchedCategories);
-                    setCategories(['all', 'Work', 'Personal', 'Shopping', 'Learning', 'General']); // Fallback
+                    setCategories(['all', 'Work', 'Personal', 'Shopping', 'Learning', 'General']); 
                 }
-                // --- END MODIFIED LINE BLOCK ---
+              
 
             } catch (error) {
                 console.error("Error fetching categories:", error);
-                setCategories(['all', 'Work', 'Personal', 'Shopping', 'Learning', 'General']); // Fallback on API error
+                setCategories(['all', 'Work', 'Personal', 'Shopping', 'Learning', 'General']); 
             }
         };
         fetchCategories();

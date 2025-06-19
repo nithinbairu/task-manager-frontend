@@ -1,31 +1,30 @@
-// components/AIPredictCategory.jsx
+
 import React, { useState } from 'react';
 import axios from 'axios';
 
 const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
 
-// You need to pass the userId as a prop to this component
-const AIPredictCategory = ({ token, userId }) => { // <--- Added userId prop
-  const [newTaskSummary, setNewTaskSummary] = useState(''); // Changed from 'tasks' to 'newTaskSummary'
+const AIPredictCategory = ({ token, userId }) => { 
+  const [newTaskSummary, setNewTaskSummary] = useState(''); 
   const [prediction, setPrediction] = useState('');
-  const [error, setError] = useState(''); // To show error messages
+  const [error, setError] = useState(''); 
 
   const handlePredict = async () => {
-    setError(''); // Clear previous errors
-    setPrediction(''); // Clear previous prediction
+    setError(''); 
+    setPrediction(''); 
 
-    if (!userId || !newTaskSummary.trim()) { // Check if userId and summary are present
+    if (!userId || !newTaskSummary.trim()) { 
       setError('Please provide a user ID and a task summary.');
       return;
     }
 
     try {
-      // Make a GET request to the correct URL with userId
+      
       const res = await axios.get(
-        `${backendUrl}/api/ai/predict-category/${userId}`, // userId in URL parameter
+        `${backendUrl}/api/ai/predict-category/${userId}`, 
         {
           headers: { Authorization: `Bearer ${token}` },
-          params: { // Sending newTaskSummary as a query parameter for a GET request
+          params: {
             newTaskSummary: newTaskSummary
           }
         }
@@ -41,7 +40,7 @@ const AIPredictCategory = ({ token, userId }) => { // <--- Added userId prop
   return (
     <div>
       <h3>Predict Next Category (AI-Powered)</h3>
-      {/* You might need to add an input for userId if it's not passed as a prop */}
+      
       <input
         type="text"
         value={newTaskSummary}

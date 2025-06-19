@@ -1,4 +1,4 @@
-    // src/components/PieChart.jsx
+ 
     import React from 'react';
     import { Pie } from 'react-chartjs-2';
     import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
@@ -7,10 +7,10 @@
 
     const PieChart = ({ labels, data }) => {
         const chartData = {
-            labels: labels, // e.g., ['Work', 'Personal', 'Shopping', 'Learning']
+            labels: labels, 
             datasets: [
                 {
-                    data: data, // e.g., [12, 19, 3, 5]
+                    data: data, 
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.8)',
                         'rgba(54, 162, 235, 0.8)',
@@ -34,7 +34,7 @@
             responsive: true,
             plugins: {
                 legend: {
-                    position: 'right', // or 'top', 'bottom', 'left'
+                    position: 'right', 
                     labels: {
                         boxWidth: 12,
                         padding: 10,

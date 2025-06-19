@@ -1,7 +1,7 @@
-// src/components/TaskModal.jsx
+
 import React, { useState, useEffect } from 'react';
-import axios from 'axios'; // For AI description generation
-import '../styles/TaskModal.css'; // New CSS file
+import axios from 'axios'; 
+import '../styles/TaskModal.css'; 
 
 const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
 
@@ -16,22 +16,22 @@ const TaskModal = ({ isOpen, onClose, onSave, task, token }) => {
 
     useEffect(() => {
         if (task) {
-            // Populate form for editing
+           
             setName(task.name || task.summary || '');
             setDescription(task.description || '');
             setCategory(task.category || '');
             setDueDate(task.dueDate ? new Date(task.dueDate).toISOString().split('T')[0] : '');
             setStatus(task.status || 'pending');
         } else {
-            // Reset form for adding
+            
             setName('');
             setDescription('');
             setCategory('');
             setDueDate('');
             setStatus('pending');
         }
-        setGeneratedDescription(''); // Clear generated description on modal open
-    }, [task, isOpen]); // Reset when modal opens or task changes
+        setGeneratedDescription(''); 
+    }, [task, isOpen]); 
 
     const handleGenerateDescription = async () => {
         if (!name.trim()) {
@@ -47,7 +47,7 @@ const TaskModal = ({ isOpen, onClose, onSave, task, token }) => {
                 { headers: { Authorization: `Bearer ${token}` } }
             );
             setGeneratedDescription(res.data.description);
-            setDescription(res.data.description); // Optionally auto-fill description
+            setDescription(res.data.description); 
         } catch (err) {
             console.error('AI description generation failed:', err);
             alert('Failed to generate description. Please try again.');

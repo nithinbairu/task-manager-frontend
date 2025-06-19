@@ -1,6 +1,6 @@
-// src/components/TaskListCard.jsx
+
 import React from 'react';
-import '../styles/TaskListCard.css'; // Create this CSS file
+import '../styles/TaskListCard.css'; 
 
 const TaskListCard = ({ title, tasks, emptyMessage }) => {
     return (
@@ -16,7 +16,7 @@ const TaskListCard = ({ title, tasks, emptyMessage }) => {
                                     {new Date(task.dueDate).toLocaleDateString()}
                                 </span>
                             )}
-                            {/* Add more task details as needed */}
+                            
                         </li>
                     ))}
                 </ul>

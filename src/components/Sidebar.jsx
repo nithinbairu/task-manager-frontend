@@ -1,10 +1,9 @@
-// src/components/Sidebar.jsx
+x
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom'; // Assuming you use React Router
-import { FaTachometerAlt, FaTasks, FaCog, FaUserCircle, FaSignOutAlt } from 'react-icons/fa'; // Install react-icons: npm install react-icons
+import { Link, useLocation } from 'react-router-dom'; 
+import { FaTachometerAlt, FaTasks, FaCog, FaUserCircle, FaSignOutAlt } from 'react-icons/fa'; 
 
-import '../styles/Sidebar.css'; // Create this CSS file
-
+import '../styles/Sidebar.css';
 const Sidebar = ({ userName, userRole, onLogout }) => {
     const location = useLocation();
 
@@ -31,7 +30,7 @@ const Sidebar = ({ userName, userRole, onLogout }) => {
                             <FaCog className="nav-icon" /> Settings
                         </Link>
                     </li>
-                    {/* Add more navigation items as needed */}
+                    
                 </ul>
             </nav>
             <div className="sidebar-footer">

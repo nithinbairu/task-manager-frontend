@@ -10,7 +10,7 @@ const AIGenerateDescription = ({ token }) => {
   const [loading, setLoading] = useState(false);
 
   const handleGenerate = async () => {
-    if (!summary.trim()) return; // Prevent empty requests
+    if (!summary.trim()) return; 
     setLoading(true);
     setDescription('');
     setError('');

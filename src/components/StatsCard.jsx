@@ -1,6 +1,6 @@
-// src/components/StatsCard.jsx
+
 import React from 'react';
-import '../styles/StatsCard.css'; // Create this CSS file
+import '../styles/StatsCard.css'; 
 
 const StatsCard = ({ title, value, icon, description, color }) => {
     return (

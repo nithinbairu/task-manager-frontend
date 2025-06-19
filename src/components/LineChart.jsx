@@ -1,4 +1,4 @@
-// src/components/LineChart.jsx
+
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
@@ -7,11 +7,11 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, T
 
 const LineChart = ({ labels, data }) => {
     const chartData = {
-        labels: labels, // e.g., ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri']
+        labels: labels, 
         datasets: [
             {
                 label: 'Tasks Completed',
-                data: data, // e.g., [0, 0, 1, 2, 1, 3, 4]
+                data: data,
                 borderColor: 'rgb(75, 192, 192)',
                 backgroundColor: 'rgba(75, 192, 192, 0.5)',
                 tension: 0.1,
@@ -24,7 +24,7 @@ const LineChart = ({ labels, data }) => {
         responsive: true,
         plugins: {
             legend: {
-                display: false, // Don't show legend for single dataset
+                display: false,
             },
             title: {
                 display: false,
@@ -38,7 +38,7 @@ const LineChart = ({ labels, data }) => {
             },
             y: {
                 beginAtZero: true,
-                suggestedMax: 4, // Example: Adjust based on your data scale
+                suggestedMax: 4, 
                 ticks: {
                     stepSize: 1,
                 },

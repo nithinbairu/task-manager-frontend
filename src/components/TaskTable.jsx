@@ -1,8 +1,7 @@
-// src/components/TaskTable.jsx
-import React from 'react';
-import TaskItem from './TaskItem'; // Individual row/card
-import '../styles/TaskTable.css'; // New CSS file
 
+import React from 'react';
+import TaskItem from './TaskItem'; 
+import '../styles/TaskTable.css'; 
 const TaskTable = ({ tasks, onEdit, onDelete, onComplete }) => {
     return (
         <div className="task-table-container">

@@ -1,9 +1,8 @@
-// src/components/TaskItem.jsx
-import React from 'react';
-import moment from 'moment'; // npm install moment
-import { FaEdit, FaTrash, FaCheckCircle, FaRegCircle } from 'react-icons/fa'; // Install react-icons
-import '../styles/TaskItem.css'; // New CSS file
 
+import React from 'react';
+import moment from 'moment'; 
+import { FaEdit, FaTrash, FaCheckCircle, FaRegCircle } from 'react-icons/fa';
+import '../styles/TaskItem.css';
 const TaskItem = ({ task, onEdit, onDelete, onComplete }) => {
     const isOverdue = task.status !== 'completed' && moment(task.dueDate).isBefore(moment(), 'day');
 
