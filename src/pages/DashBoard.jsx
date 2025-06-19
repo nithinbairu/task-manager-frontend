@@ -14,7 +14,7 @@ import { getTasks } from '../services/taskService'; // Existing service for gene
 import '../styles/Dashboard.css'; // Import the CSS file
 
 const Dashboard = ({ token, onLogout }) => {
-    console.log("Dashboard component received token:", token);
+    
     const [stats, setStats] = useState({
         totalTasks: 0,
         completedTasks: 0,

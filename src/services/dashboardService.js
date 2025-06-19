@@ -5,7 +5,7 @@ const BACKEND_BASE_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:
 const API_URL = `${BACKEND_BASE_URL}/api/dashboard`; // This is the base for dashboard routes
 
 const getConfig = (token) => {
-    console.log("Token sent in request:", token); // <--- ADD THIS
+    
     return {
         headers: {
             Authorization: `Bearer ${token}`,
